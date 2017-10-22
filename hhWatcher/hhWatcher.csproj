@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>netcoreapp2.0</TargetFramework>
+		<StartupObject>hhWatcher.Program</StartupObject>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<NoStdLib>false</NoStdLib>
+		<PlatformTarget>x64</PlatformTarget>
+		<TrimUnusedDependencies>true</TrimUnusedDependencies>
+		<LangVersion>7.1</LangVersion>
+		<ServerGarbageCollection>true</ServerGarbageCollection>
+		<Optimize>true</Optimize>
+		<CustomCommands>
+			<CustomCommands>
+				<Command>
+					<type>BeforeBuild</type>
+				</Command>
+			</CustomCommands>
+		</CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<NoStdLib>false</NoStdLib>
+		<LangVersion>7.1</LangVersion>
+		<RuntimeIdentifiers>osx.10.11-x64;ubuntu.14.04-x64</RuntimeIdentifiers>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="HtmlAgilityPack" Version="1.6.1" />
+	</ItemGroup>
+</Project>
