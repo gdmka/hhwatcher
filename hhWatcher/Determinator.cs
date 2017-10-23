@@ -21,7 +21,7 @@ namespace hhWatcher
 
         private static Dictionary<int, string> jobData = new Dictionary<int, string>();
 
-        private static string OnChange(string val)
+        private static void OnChange(string val)
         {
 
             HtmlNode table = _doc.DocumentNode.SelectSingleNode($"//table[contains(@class, '{tableSelector}')]");
@@ -45,7 +45,7 @@ namespace hhWatcher
 
             SendNotify(val, newVerbose);
             _doc = null;
-            return val;
+            _positions = val;
         }
         const string posSelector = "b-employerpage-vacancies-hint";
         const string tableSelector = "l-table";
