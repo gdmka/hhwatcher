@@ -40,9 +40,9 @@ namespace hhWatcher
                 }
 
                 t.Add(HashCode);
-                cleanDict(t);
             }
 
+            cleanDict(t);
             SendNotify(val, newVerbose);
             _doc = null;
             _positions = val;
