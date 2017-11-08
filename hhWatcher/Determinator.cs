@@ -52,9 +52,13 @@ namespace hhWatcher
 
         public static void Parse(HtmlDocument doc)
         {
+
             string pos = doc.DocumentNode.SelectSingleNode($"//span[contains(@class, '{posSelector}')]").InnerHtml;
-            _doc = doc;
-            PosChanged(pos);
+            if (pos != null)
+            {
+                _doc = doc;
+                PosChanged(pos);
+            }
         }
 
         public static NotifyDeletgate SendNotify = Notifier.Notify;
