@@ -52,12 +52,12 @@ namespace hhWatcher
 
         public static void Parse(HtmlDocument doc)
         {
+            string pos = doc.DocumentNode.SelectSingleNode($"//span[contains(@class, '{posSelector}')]")?.InnerHtml;
 
-            HtmlNode pos = doc.DocumentNode.SelectSingleNode($"//span[contains(@class, '{posSelector}')]");
             if (pos != null)
             {
                 _doc = doc;
-                PosChanged(pos.InnerHtml);
+                PosChanged(pos);
             }
         }
 
