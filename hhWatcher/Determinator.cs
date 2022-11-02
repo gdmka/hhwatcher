@@ -66,7 +66,8 @@ namespace hhWatcher
         private static void PosChanged(string pos)
         {
 
-            if (positions == "") { positions = pos; }            else if (Int32.Parse(positions) != Int32.Parse(pos))
+            if (positions == "") { positions = pos; }
+            else if (Int32.Parse(positions) != Int32.Parse(pos))
             {
                 positions = pos;
             }
